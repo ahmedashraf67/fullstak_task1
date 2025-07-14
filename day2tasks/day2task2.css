@@ -1,0 +1,46 @@
+body {
+     background: linear-gradient(50deg, rgb(187, 80, 187), rgb(79, 198, 228));
+    padding: 30px;
+    margin: 20px;
+    font-family: Arial;
+}
+
+.form-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+    width: 300px;
+    background-color: rgb(241, 238, 244);
+}
+
+button {
+    background-color: rgb(35, 3, 116);
+    color: rgb(19, 1, 1);
+    font-weight: bold;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.log-table {
+    background-color: rgb(146, 241, 176);
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.log-table th, .log-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid black;
+    
+}
+
+.first-ol, .second-ol, .first-ul, .second-ul {
+    padding-left: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    background-color: aqua;
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>حساب التقدير</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+
+    label, input, button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 8px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: darkgreen;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .excellent {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+    }
+
+    .very-good {
+      background-color: #fff9c4;
+      color: #f57f17;
+    }
+
+    .good {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .weak {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>مرحبًا، أنا أحمد</h1>
+
+  <label for="grade">ادخل درجتك (من 0 إلى 100):</label>
+  <input type="number" id="grade" min="0" max="100" />
+
+  <button onclick="calculateGrade()">التقدير</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateGrade() {
+      let grade = parseFloat(document.getElementById("grade").value);
+      let resultDiv = document.getElementById("result");
+
+      
+      resultDiv.className = "";
+
+      if (isNaN(grade) || grade < 0 || grade > 100) {
+        resultDiv.textContent = "من فضلك أدخل درجة صحيحة من 0 إلى 100";
+        resultDiv.style.backgroundColor = "#ffebee";
+        resultDiv.style.color = "#c62828";
+        return;
+      }
+
+      if (grade >= 90) {
+        resultDiv.textContent = "التقدير: ممتاز";
+        
+      } else if (grade >= 80) {
+        resultDiv.textContent = "التقدير: جيد جدًا";
+        
+      } else if (grade >= 70) {
+        resultDiv.textContent = "التقدير: جيد";
+       
+      } else {
+        resultDiv.textContent = "التقدير: ضعيف";
+        
+      }
+    }
+  </script>
+
+</body>
+</html>
