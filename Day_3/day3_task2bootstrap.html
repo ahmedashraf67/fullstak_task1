@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>نموذج تسجيل</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    body {
+      direction: rtl;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="card shadow p-4">
+      <h3 class="mb-4 text-center">نموذج تسجيل الطالب</h3>
+
+      <form class="needs-validation" novalidate>
+       
+        <div class="mb-3">
+          <label for="name" class="form-label">الاسم الكامل</label>
+          <input type="text" class="form-control" id="name" name="name" required style="direction: ltr;">
+        
+         
+        </div>
+
+       
+        <div class="mb-3">
+          <label for="phone" class="form-label">رقم الهاتف</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required style="direction: ltr;">
+         
+        </div>
+
+        
+        <div class="mb-3">
+          <label for="city" class="form-label">المدينة</label>
+          <input type="text" class="form-control" id="city" name="city" required style="direction: ltr;">
+         
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary w-100">تسجيل</button>
+      </form>
+    </div>
+  </div>
+
+  
+  <script>
+    
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+
+  <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

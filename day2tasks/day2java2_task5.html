@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 2 - Homework</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      direction: ltr;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      margin: 10px 0;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00695c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Welcome Heading -->
+  <h1 id="welcome">Welcome to our page!</h1>
+
+  <!-- Form -->
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username" oninput="showGreeting()" placeholder="Your name here">
+
+  <p id="message"></p>
+
+  <!-- Script -->
+  <script>
+    function showGreeting() {
+      let name = document.getElementById("username").value;
+      let message = document.getElementById("message");
+      let welcome = document.getElementById("welcome");
+
+      if (name.trim() !== "") {
+        message.textContent = `Hello, ${name} `;
+        welcome.textContent = `Welcome, ${name}, to our page!`;
+      } else {
+        message.textContent = "";
+        welcome.textContent = "Welcome to our page!";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Table & Event Form</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-danger">
+
+  
+  <div class="container my-5">
+    <h4 class="mb-3 text-center text-white " >Sample Data Table</h4>
+
+    <table class="table table-bordered text-center">
+      <thead class="bg-dark text-white">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white text-dark">
+        <tr>
+          <td>Ahmed Ali</td>
+          <td>ahmed@example.com</td>
+          <td>Student</td>
+        </tr>
+        <tr>
+          <td>Mona Mohamed</td>
+          <td>mona@example.com</td>
+          <td>Lecturer</td>
+        </tr>
+        <tr>
+          <td>Karim Youssef</td>
+          <td>karim@example.com</td>
+          <td>Supervisor</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="container mb-5">
+    <div class="card shadow p-4">
+      <h4 class="mb-4 text-center">Event Registration</h4>
+
+      <form class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required>
+          <div class="invalid-feedback">Please enter your full name.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="nid" class="form-label">National ID</label>
+          <input type="text" class="form-control" id="nid" required>
+          <div class="invalid-feedback">Please enter your National ID.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" required>
+          <div class="invalid-feedback">Please enter your phone number.</div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Register</button>
+
+          
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#warningModal">
+            Read More
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title" id="warningModalLabel">Important Notes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Make sure your email is valid before submitting.</li>
+            <li>All fields must be filled.</li>
+            <li>National ID should be 14 digits.</li>
+            <li>Your data will only be used for event communication.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <script src="bootstrap.bundle.min.js">
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+
+</body>
+</html>
